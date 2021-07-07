@@ -11,6 +11,7 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('guest', ['only' => ['create']]);
+        $this->middleware('auth', ['except' => ['show', 'create', 'store', 'index']]);
     }
 
     /**
