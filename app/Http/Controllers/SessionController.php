@@ -7,6 +7,11 @@ use Illuminate\Support\Facades\Auth;
 
 class SessionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest', ['only' => ['create']]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
